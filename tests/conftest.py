@@ -25,9 +25,7 @@ except RuntimeError:
                 f'Убедитесь, что зарегистрировано приложение {need_app_name}'
             )
 
-pytest_plugins = [
-    'fixtures.fixture_data'
-]
+pytest_plugins = ['tests.fixtures.fixture_data']
 
 
 @pytest.fixture
