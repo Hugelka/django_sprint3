@@ -5,14 +5,17 @@ from .models import Category, Location, Post
 admin.site.empty_value_display = 'Не задано'
 
 
+@admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'slug', 'is_published', 'created_at')
 
 
+@admin.register(Location)
 class LocationAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'is_published', 'created_at')
 
 
+@admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     list_display = (
         'id',
@@ -23,8 +26,3 @@ class PostAdmin(admin.ModelAdmin):
         'location',
         'category'
     )
-
-
-admin.site.register(Category, CategoryAdmin)
-admin.site.register(Location, LocationAdmin)
-admin.site.register(Post, PostAdmin)
